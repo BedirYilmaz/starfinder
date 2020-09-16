@@ -1,0 +1,3 @@
+/mnt/tera/code/cpp/projects/starfinder/build/CMakeFiles/rebuild_cache.dir
+/mnt/tera/code/cpp/projects/starfinder/build/CMakeFiles/star-finder.dir
+/mnt/tera/code/cpp/projects/starfinder/build/CMakeFiles/edit_cache.dir

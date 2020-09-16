@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/mnt/tera/code/cpp/projects/starfinder/build",
+  "command": "/usr/bin/g++-7   -isystem /usr/local/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/star-finder.dir/main.cpp.o -c /mnt/tera/code/cpp/projects/starfinder/main.cpp",
+  "file": "/mnt/tera/code/cpp/projects/starfinder/main.cpp"
+}
+]
