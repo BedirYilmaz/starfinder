@@ -1,3 +1,6 @@
+// bedir yilmaz
+// mainly inspired from https://github.com/opencv/opencv/blob/master/samples/cpp/tutorial_code/features2D/feature_homography/SURF_FLANN_matching_homography_Demo.cpp
+
 // main.cpp
 
 #include <iostream>
