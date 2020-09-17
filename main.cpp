@@ -21,8 +21,8 @@ int main( int argc, char* argv[] )
 {
     // CommandLineParser parser( argc, argv, keys );
 
-    // char image_object_path[] = "/mnt/tera/code/cpp/projects/starfinder/images/Small_area.png";
-    char image_object_path[] = "/mnt/tera/code/cpp/projects/starfinder/images/Small_area_rotated.png";
+    char image_object_path[] = "/mnt/tera/code/cpp/projects/starfinder/images/Small_area.png";
+    // char image_object_path[] = "/mnt/tera/code/cpp/projects/starfinder/images/Small_area_rotated.png";
     // char image_object_path[] = "/mnt/tera/code/cpp/projects/starfinder/images/Small_area_noised.png";
     char image_scene_path[] = "/mnt/tera/code/cpp/projects/starfinder/images/StarMap.png";
 
@@ -36,13 +36,6 @@ int main( int argc, char* argv[] )
         return -1;
     }
 
-    // rotate(img_object, img_object, ROTATE_90_CLOCKWISE);
-    flip(img_object, img_object, 0);
-        
-    // namedWindow("Simple Demo", WINDOW_AUTOSIZE);
-    // imshow("Simple Demo", img_scene);
-    // waitKey(0);
-    // destroyAllWindows();
 
     for (int i =0; i<2; i++){
         
@@ -71,26 +64,7 @@ int main( int argc, char* argv[] )
             }
         }
 
-        cout << good_matches.size() << endl;
-
-        if (good_matches.size() < MIN_MATCH_COUNT){
-            // int angle = 1;
-            // // get rotation matrix for rotating the image around its center in pixel coordinates
-            // Point2f center((img_object.cols-1)/2.0, (img_object.rows-1)/2.0);
-            // Mat rot = cv::getRotationMatrix2D(center, angle, 1.0);
-            // // determine bounding rectangle, center not relevant
-            // Rect2f bbox = cv::RotatedRect(cv::Point2f(), img_object.size(), angle).boundingRect2f();
-            // // adjust transformation matrix
-            // rot.at<double>(0,2) += bbox.width/2.0 - img_object.cols/2.0;
-            // rot.at<double>(1,2) += bbox.height/2.0 - img_object.rows/2.0;
-
-            // Mat dst;
-            // warpAffine(img_object, img_object, rot, bbox.size());
-
-            // flip(img_object, img_object, 0);
-
-            // continue;
-        }    
+        cout << "number of good matches: " + std::to_string(good_matches.size()) << endl;
 
         //-- Draw matches
         drawMatches( img_object, keypoints_object, img_scene, keypoints_scene, good_matches, img_matches, Scalar::all(-1),
@@ -129,25 +103,6 @@ int main( int argc, char* argv[] )
         cout << "x: " + std::to_string((int)scene_corners[2].x) + " y: " + std::to_string((int)scene_corners[2].y) << endl;
         cout << "x: " + std::to_string((int)scene_corners[3].x) + " y: " + std::to_string((int)scene_corners[3].y) << endl;
 
-        //-- Draw lines between the corners (the mapped object in the scene - image_2 )
-        // line( img_matches, scene_corners[0] + Point2f((float)img_object.cols, 0),
-        //     scene_corners[1] + Point2f((float)img_object.cols, 0), Scalar(0, 255, 0), 4 );
-        // line( img_matches, scene_corners[1] + Point2f((float)img_object.cols, 0),
-        //     scene_corners[2] + Point2f((float)img_object.cols, 0), Scalar( 0, 255, 0), 4 );
-        // line( img_matches, scene_corners[2] + Point2f((float)img_object.cols, 0),
-        //     scene_corners[3] + Point2f((float)img_object.cols, 0), Scalar( 0, 255, 0), 4 );
-        // line( img_matches, scene_corners[3] + Point2f((float)img_object.cols, 0),
-        //     scene_corners[0] + Point2f((float)img_object.cols, 0), Scalar( 0, 255, 0), 4 );
-
-        //-- Draw position labels to indicate the pixel coordinates of the bounding box
-
-        // putText(img_matches, "x: " + std::to_string((int)scene_corners[0].x) + " y: " + std::to_string((int)scene_corners[0].y), 
-        // scene_corners[0], FONT_HERSHEY_PLAIN, 2.0, CV_RGB(255,0,0), 2.0);
-
-        //-- Show detected matches
-        // imshow("Good Matches & Object detection", img_matches );
-
-        // waitKey();
         return 0;
     }
 }
